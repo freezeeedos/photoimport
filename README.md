@@ -5,3 +5,5 @@ I use find2perl the explore the filesystem recurcively.
 Usage:
 
 photoimport -s [full path to source directory] -d [full path to destination directory]
+
+Why ? Because I do timelapses, and it involves a LOT of files. And because I can.

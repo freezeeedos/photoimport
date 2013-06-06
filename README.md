@@ -7,9 +7,9 @@ Usage:
 <pre>
 photoimport -s [full path to source directory] -d [full path to destination directory]
 
- -s    &lt;source_directory&gt;
- -d    &lt;destination_directory&gt;
- -e    "&lt;event&gt;" (e.g: "This awesome party")
+ -s    [source_directory]
+ -d    [destination_directory]
+ -e    "[event]" (e.g: "This awesome party")
  -o    overwrite existing files
  -v    Verbose Mode.
  -q    Quiet Mode.

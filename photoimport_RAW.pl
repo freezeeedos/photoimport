@@ -17,8 +17,9 @@ our $opt_d;
 our $opt_q;
 our $opt_v;
 our $opt_o;
+our $opt_e;
 
-getopts('s:d:ovq');
+getopts('s:d:ovqe:');
 sub process;
 sub wanted;
 sub helpmsg;
@@ -41,6 +42,11 @@ sub process {
     my $dirname;
     
     ($file) = @_;
+    if($opt_e)
+    {
+	$opt_e =~ s/\s/_/g;
+    }
+    
     for(grep(/^.*\.(RAW|RW2)$/, $file))
     {
 	if(!$opt_q)
@@ -56,8 +62,14 @@ sub process {
 	    {
 		print qq{ANNEE: $year\n};
 	    }
+	    
 	    ( $dirname ) = $date =~ /^(.{10})/;
 	    $dirname =~ s/:/_/g;
+	    if($opt_e)
+	    {
+		$dirname = qq{$dirname\_$opt_e};
+	    }
+	    
 	    if( ! -d $opt_d )
 	    {
 		mkdir(qq{$opt_d}, 0755) or die qq{Failure while creating directory $opt_d: $!};
@@ -116,6 +128,7 @@ sub helpmsg(){
     print qq{Usage:
  -s    <source_directory>
  -d    <destination_directory>
+ -e    "<event>" (e.g: "This awesome party")
  -o    overwrite existing files
  -v    Verbose Mode.
  -q    Quiet Mode.

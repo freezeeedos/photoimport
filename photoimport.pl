@@ -47,7 +47,7 @@ sub process {
 	$opt_e =~ s/\s/_/g;
     }
     
-    for(grep(/^.*\.(jpg|JPG)$/, $file))
+    for(grep(/^.*\.(jpg|JPG|RAW|RW2)$/, $file))
     {
 	if(!$opt_q)
 	{

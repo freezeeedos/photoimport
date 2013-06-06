@@ -6,4 +6,11 @@ Usage:
 
 photoimport -s [full path to source directory] -d [full path to destination directory]
 
+ -s    <source_directory>
+ -d    <destination_directory>
+ -e    "<event>" (e.g: "This awesome party")
+ -o    overwrite existing files
+ -v    Verbose Mode.
+ -q    Quiet Mode.
+
 Why ? Because I do timelapses, and it involves a LOT of files. And because I can.

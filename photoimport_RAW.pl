@@ -1,5 +1,6 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
+use warnings;
 use strict;
 use Getopt::Std;
 use Image::ExifTool qw(:Public);

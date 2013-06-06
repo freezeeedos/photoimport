@@ -126,6 +126,9 @@ sub wanted {
 sub helpmsg(){
     no warnings;
     print qq{Usage:
+    
+photoimport -s [full path to source directory] -d [full path to destination directory]
+
  -s    <source_directory>
  -d    <destination_directory>
  -e    "<event>" (e.g: "This awesome party")

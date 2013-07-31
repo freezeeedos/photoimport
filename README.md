@@ -18,4 +18,3 @@ Usage:
     -q    Quiet Mode.
 
 **It will overwrite modified files by default.**
-Why ? Because I do timelapses, and it involves a LOT of files. And because I can.

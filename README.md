@@ -13,7 +13,8 @@ Usage:
     -s    [source_directory]
     -d    [destination_directory]
     -e    "[event]" (e.g: "This awesome party")
-    -o    overwrite existing files
+    -o    overwrite all existing files
+    -k    keep modified files in their current version.
     -v    Verbose Mode.
     -q    Quiet Mode.
 

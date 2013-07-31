@@ -16,6 +16,5 @@ Usage:
     -o    overwrite all existing files
     -k    keep modified files in their current version.
     -v    Verbose Mode.
-    -q    Quiet Mode.
 
 **It will overwrite modified files by default.**

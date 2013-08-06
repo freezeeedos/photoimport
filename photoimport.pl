@@ -122,15 +122,25 @@ sub process {
                 $atime_d,$mtime_d,$ctime_d,$blksize_d,$blocks_d)
                 = stat(qq{$opt_d/$year/$dirname/$filename});
                 #Simple "rsync" stuff: compare modification time and size
-                if( ( $mtime_d != $mtime ) && ( $size_d != $size ) && (!$opt_k ) )
+                if( ( $mtime_d != $mtime ) && ( $size_d != $size ) )
                 {
-                    if( $opt_v )
-                    {
-                        print qq{Copying new version of $file\n};
-                        print qq{to $opt_d/$year/$dirname/$filename\n};
-                        print qq{ANNEE: $year\n};
+		    if(!$opt_k)
+		    {
+			if( $opt_v )
+			{
+			    print qq{Copying new version of $file\n};
+			    print qq{to $opt_d/$year/$dirname/$filename\n};
+			    print qq{ANNEE: $year\n};
+			}
+			copy($file, qq{$opt_d/$year/$dirname/}) or die qq{Failure while copying $file: $!};
                     }
-                    copy($file, qq{$opt_d/$year/$dirname/}) or die qq{Failure while copying $file: $!};
+                }
+                else
+                {
+		    if( $opt_v )
+		    {
+			print qq{$opt_d/$year/$dirname/$filename is up-to-date\n};
+		    }
                 }
             }
         }
